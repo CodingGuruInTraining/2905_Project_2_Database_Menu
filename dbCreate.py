@@ -1,5 +1,10 @@
 import sqlite3
 
+
+def main():
+    createTable()
+
+
 def createTable():
     filename = "storeDB.sqlite"
     table1 = "products"
@@ -19,3 +24,5 @@ def createTable():
 
     conn.commit()
     conn.close()
+
+main()

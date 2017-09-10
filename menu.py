@@ -1,5 +1,6 @@
 import dbCreate, dbAdd, dbUpdate, dbDelete, dbShowAll, dbShowOne
 
+
 def main():
     keep_running = True
     while keep_running:
@@ -10,6 +11,7 @@ def main():
         if more.lower() == "n":
             print("Yeah, neither did I.")
             keep_running = False
+
 
 def showMenu():
     print('=' * 45)
@@ -22,6 +24,7 @@ def showMenu():
     print('6 -- Show Entry')
     print('Enter any other key to exit.')
     print('=' * 45)
+
 
 def runMenu(num):
     if num == '1':
