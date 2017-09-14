@@ -12,8 +12,10 @@ def updateEntry():
     conn = sqlite3.connect(filename)
     connCursor = conn.cursor()
 
-
-    connCursor.execute("UPDATE {tn} SET")
+    try:
+        connCursor.execute("UPDATE {tn} SET")
+    except sqlite3.Error:
+        print("Error")
 
     conn.commit()
     conn.close()
