@@ -1,10 +1,11 @@
 import sqlite3
 
 
-def main():
-    allData = queryAll()
-    showData(allData)
-    # return allData
+def main(go = False):
+    if go == True:
+        allData = queryAll()
+        showData(allData)
+        # return allData
 
 
 def queryAll():
@@ -27,7 +28,7 @@ def showData(allData):
     for row in allData:
         print(formatStr % (str(row[0]), row[1], "$" + str(row[2]), str(row[3]), str(row[4]), row[5], row[6]))
 
-main()
+# main()
 
 
 # Helpful reference:

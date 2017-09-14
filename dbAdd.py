@@ -1,8 +1,9 @@
 import sqlite3
 
 
-def main():
-    addEntry()
+def main(go = False):
+    if go == True:
+        addEntry()
 
 
 def addEntry():
@@ -13,18 +14,13 @@ def addEntry():
     connCursor = conn.cursor()
 
     try:
-    # connCursor.execute("INSERT OR IGNORE INTO products VALUES (NULL, 'fefw', 3, 4, 5, 'fwefwf', 'fefawef')")
-    # conStr = "INSERT INTO {tn} ([Name], Price, Quantity, NumSold, Description, Color) VALUES ({f1}, {f2}, {f3}, {f4}, {f5}, {f6})".\
-    #        format(tn=table1, f1="\'" + answers[0] + "\'", f2=float(answers[1]), f3=int(answers[2]),
-    #               f4=int(answers[3]), f5="\'" + answers[4] + "\'", f6="\'" + answers[5] + "\'")
-    # print(conStr)
         connCursor.execute("INSERT OR IGNORE INTO {tn} VALUES (NULL, {f1}, {f2}, {f3}, {f4}, {f5}, {f6})".
                    format(tn=table1, f1="\'" + answers[0] + "\'", f2=float(answers[1]), f3=int(answers[2]),
                   f4=int(answers[3]), f5="\'" + answers[4] + "\'", f6="\'" + answers[5] + "\'"))
     except sqlite3.IntegrityError:
         print("Error with primary key")
     except sqlite3.Error:
-        print("Error; bad values")
+        print("Error; bad values or no table")
 
     conn.commit()
     conn.close()
@@ -40,4 +36,4 @@ def getInputs():
     answers = [prodName, price, quantity, numSold, description, color]
     return answers
 
-main()
+# main()

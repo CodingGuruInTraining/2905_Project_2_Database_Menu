@@ -28,17 +28,17 @@ def showMenu():
 
 def runMenu(num):
     if num == '1':
-        dbCreate
+        dbCreate.main(True)
     elif num == '2':
-        dbAdd
+        dbAdd.main(True)
     elif num == '3':
-        dbUpdate
+        dbUpdate.main(True)
     elif num == '4':
-        dbDelete
+        dbDelete.main(True)
     elif num == '5':
-        dbShowAll
+        dbShowAll.main(True)
     elif num == '6':
-        dbShowOne
+        dbShowOne.main(True)
     else:
         print("Shutting down...goodbye")
         exit()

@@ -1,8 +1,9 @@
 import sqlite3
 
 
-def main():
-    updateEntry()
+def main(go = False):
+    if go == True:
+        updateEntry()
 
 
 def updateEntry():
@@ -18,4 +19,4 @@ def updateEntry():
     conn.close()
 
 
-main()
+# main()

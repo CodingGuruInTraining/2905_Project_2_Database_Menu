@@ -1,8 +1,9 @@
 import sqlite3
 
 
-def main():
-    createTable()
+def main(go = False):
+    if go == True:
+        createTable()
 
 
 def createTable():
@@ -25,4 +26,4 @@ def createTable():
     conn.commit()
     conn.close()
 
-main()
+# main()
