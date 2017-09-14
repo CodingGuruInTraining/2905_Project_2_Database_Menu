@@ -22,10 +22,13 @@ def queryAll():
 
 
 def showData(allData):
-    print("%-10s%-15s%-10s%-10s%-10s%-30s%-15s" % ("prodID", "Name", "Price", "Quantity", "NumSold", "Description", "Color"))
-    print("%-15s" * 7 % (
-    "prodID", "Name", "Price", "Quantity", "NumSold", "Description", "Color"))
-    # for row in allData:
-
+    formatStr = "%-10s%-15s%-10s%-10s%-10s%-30s%-15s"
+    print(formatStr % ("prodID", "Name", "Price", "Quantity", "NumSold", "Description", "Color"))
+    for row in allData:
+        print(formatStr % (str(row[0]), row[1], "$" + str(row[2]), str(row[3]), str(row[4]), row[5], row[6]))
 
 main()
+
+
+# Helpful reference:
+    # https://stackoverflow.com/questions/9535954/printing-lists-as-tabular-data
